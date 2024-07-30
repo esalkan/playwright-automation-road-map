@@ -46,4 +46,3 @@ test('Initialize newPage', async ({ browser }) => {
     - newContext() tamamen yalıtılmış bir tarayıcı oturumu oluşturur, 
     - ayrı kullanıcı oturumları gerektiren senaryoları test etmek için kullanışlıdır.
 */
-
