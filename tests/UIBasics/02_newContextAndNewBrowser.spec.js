@@ -18,23 +18,27 @@ test('Initialize newContext', async ({ browser }) => {
 
     // Default chromium
     // Varsayılan chromium
+    const page = await context.newPage();
+    await page.goto("https://google.com");
 });
 
 // Initialize browser 
 // async ({ browser }) => browser object is passed to the test block as a parameter to use it.
 // async ({ browser }) => browser nesnesi, test bloğunda kullanılmak üzere bir parametre olarak aktarılır.
-test('Initialize newPage', async ({ browser }) => {
+test('Initialize newPage', async ({ page }) => {
 
     // Creates a new browser tab or page in an existing browser context. 
     // Shares the same session and storage (cookies, local storage) with other pages in the same context. 
     
-    const page = await browser.newPage();
+    // const page = await browser.newPage();
     
     // Mevcut bir tarayıcı bağlamında yeni bir tarayıcı sekmesi veya sayfası oluşturur.
     // Aynı bağlamdaki diğer sayfalarla aynı oturumu ve depolamayı (çerezler, yerel depolama) paylaşır.
 
     // Default chromium
     // Varsayılan chromium
+
+    await page.goto("https://google.com");
 });
 
 /*
