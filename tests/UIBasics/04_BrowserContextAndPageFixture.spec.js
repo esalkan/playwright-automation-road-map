@@ -83,7 +83,9 @@ test('Browser Context fixture and Page Fixture', async ({browser})=>
 
 // async (browser)   = evaluated normal browser string value
 // async ({browser}) = evaluated browser fixture 
-test('Page Fixture', async ({page})=>
+test.only('Page Fixture', async ({page})=>
+// test.only: in the file just that test will be executed.
+// test.only: dosyada sadece bu test çalıştırılır.
     {
         // Browser context fixture: creating a new browser context (new isolated session)
         // Tarayıcı bağlamı fixture'ı: yeni bir tarayıcı bağlamı oluşturma (yeni izole oturum)
