@@ -50,11 +50,16 @@ module.exports = defineConfig({
   // Global use settings: Configures global settings, such as collecting trace on the first retry of a failed test.
   // Global Kullanım Ayarları: Başarısız olan testlerin ilk yeniden denemesinde izleme (trace) toplama ayarını yapar.
   use: {
+
+    headless: true,
+
     /* Base URL to use in actions like `await page.goto('/')`. */
     /* `await page.goto('/')` gibi eylemlerde kullanılacak temel URL. */
     // baseURL: 'http://127.0.0.1:3000',
-    browserName : 'chromium', // Yeni eklendi - added new.
-
+    // browserName : 'chromium', // Tesler yanlızca chromium ile çalışacak.
+    // browserName : 'firefox',
+    browserName : 'webkit',
+    
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     /* Başarısız testi yeniden denerken iz toplayın. Bkz. https://playwright.dev/docs/trace-viewer */
 
