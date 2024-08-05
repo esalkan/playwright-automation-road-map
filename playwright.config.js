@@ -19,6 +19,20 @@ module.exports = defineConfig({
   // Test Directory: Specifies the directory where test files are located.
   // Test Dizini: Test dosyalarının bulunduğu dizini belirtir.
   testDir: './tests',
+
+  /* Timeout: sets the maximum waiting time for a test or operation to complete to 3 seconds. 
+    If the operation is not completed within this time, a timeout error will occur.
+
+    Timeout: bir testin veya işlemin tamamlanması için maksimum bekleme süresini 3 saniye olarak ayarlar. 
+    Eğer bu süre zarfında işlem tamamlanmazsa, bir zaman aşımı hatası meydana gelir.
+  */
+  timeout: 30 * 100, // millisecond
+  
+  // expect fonksiyonları (örneğin expect(locator).toBeVisible()) için ayrı bir zaman aşımı süresi belirler. 
+  // Eğer bu süre zarfında beklenen durum gerçekleşmezse, bir zaman aşımı hatası meydana gelir.
+  expect: {
+    timeout: 5000 // millisecond
+  },
   
   /* Run tests in files in parallel */
   // Parallel Execution: Enables running tests in parallel.
@@ -69,7 +83,6 @@ module.exports = defineConfig({
   /* Configure projects for major browsers */
   // Projects Configuration: Defines projects for different browsers (Chromium, Firefox, WebKit).
   // Projeler Konfigürasyonu: Farklı tarayıcılar (Chromium, Firefox, WebKit) için projeler tanımlar.
-
   projects: [
     {
       name: 'chromium',
